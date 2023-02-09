@@ -14,6 +14,7 @@ def input_dna(request):
         if form.is_valid():
             job = form.save(commit=False)
             job.seq_num = len(job.seq)
+            job.num = 0
             job.save()
 
             return redirect('dna:output', job_id=job.id)
