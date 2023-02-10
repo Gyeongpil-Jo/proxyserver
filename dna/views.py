@@ -35,7 +35,7 @@ def output_dna(request, job_id):
 
 
 @csrf_exempt
-def output_dna(request):
+def build_dna(request):
     return HttpResponse('error')
 
 
