@@ -1,5 +1,6 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
+from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Dna
@@ -31,5 +32,10 @@ def output_dna(request, job_id):
     form = DnaForm()
     context = {'job': job, 'form': form}
     return render(request, 'dna/output.html', context)
+
+
+@csrf_exempt
+def output_dna(request):
+    return HttpResponse('error')
 
 
